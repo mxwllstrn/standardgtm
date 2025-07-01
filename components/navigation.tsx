@@ -8,8 +8,9 @@ interface NavigationProps {
 export default function Navigation({ currentPage = "Standards" }: NavigationProps) {
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     { name: "Standards", href: "/standards" },
-    { name: "Experiments", href: "/experiments" },
+    { name: "Labs", href: "/labs" },
     { name: "Support", href: "/support" },
   ]
 

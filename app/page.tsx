@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Navigation from "../components/navigation"
+import Footer from "../components/footer"
 
 export default function Page() {
   return (
@@ -29,6 +30,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
