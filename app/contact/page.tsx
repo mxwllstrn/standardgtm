@@ -1,5 +1,6 @@
 // app/contact/page.tsx
-import Link from 'next/link';
+// REMOVE: import Link from 'next/link'; // <--- Delete this line
+
 import { Button } from '@/components/ui/button'; // Assuming you created this
 
 export default function ContactPage() {
