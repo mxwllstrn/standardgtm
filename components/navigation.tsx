@@ -1,0 +1,61 @@
+import Link from "next/link"
+import { MessageCircle, User, X } from "lucide-react"
+
+interface NavigationProps {
+  currentPage?: string
+}
+
+export default function Navigation({ currentPage = "Standards" }: NavigationProps) {
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Standards", href: "/standards" },
+    { name: "Experiments", href: "/experiments" },
+    { name: "Support", href: "/support" },
+  ]
+
+  return (
+    <nav className="w-full border-b border-gray-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Left Navigation */}
+          <div className="flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`text-sm font-medium transition-colors hover:text-gray-900 ${
+                  currentPage === item.name ? "text-gray-900" : "text-gray-500"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Center Logo */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <Link href="/" className="text-lg font-semibold text-gray-900">
+              Standard GTM
+            </Link>
+          </div>
+
+          {/* Right Icons */}
+          <div className="flex items-center space-x-4">
+            <button className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+              <MessageCircle className="h-5 w-5" />
+              <span className="sr-only">Messages</span>
+            </button>
+            <button className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+              <User className="h-5 w-5" />
+              <span className="sr-only">User profile</span>
+            </button>
+            <button className="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
