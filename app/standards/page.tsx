@@ -27,7 +27,7 @@ export default function StandardsPage() {
                   <div className="border border-gray-200 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-3">Product Positioning Standards</h3>
                     <p className="text-gray-600">
-                      Best practices for defining and communicating your product's unique value proposition.
+                      Best practices for defining and communicating your product&apos;s unique value proposition.
                     </p>
                   </div>
 
