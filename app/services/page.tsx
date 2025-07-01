@@ -1,29 +1,27 @@
-// app/about/page.tsx
+// app/services/page.tsx
 import { promises as fs } from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote/rsc'; // For MDX rendering later
+import { Button } from '@/components/ui/button'; // Assuming you created this
 
-// Placeholder for a simple MDX renderer if not using next-mdx-remote yet
+// Placeholder for a simple Markdown renderer
 const SimpleMarkdownRenderer = ({ content }: { content: string }) => {
-  // A very basic renderer for markdown, not supporting MDX components fully
-  // You'll replace this with a proper MDX renderer later
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
-export default async function AboutPage() {
+export default async function ServicesPage() {
   let content = '';
   let data: Record<string, any> = {};
 
   try {
-    const filePath = path.join(process.cwd(), 'content', 'about', 'maxwell-stern.md');
+    const filePath = path.join(process.cwd(), 'content', 'services', 'offerings.md');
     const fileContent = await fs.readFile(filePath, 'utf8');
     const { data: frontmatter, content: markdownContent } = matter(fileContent);
     content = markdownContent;
     data = frontmatter;
   } catch (error) {
-    console.error("Error loading about page content:", error);
+    console.error("Error loading services page content:", error);
     notFound(); // Display 404 if content file is not found
   }
 
@@ -31,18 +29,20 @@ export default async function AboutPage() {
     <div className="container mx-auto px-4 py-12 md:py-16">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">
-          {data.title || "About Us"}
+          {data.title || "Our Services"}
         </h1>
-        {data.image && (
-          <img
-            src={data.image}
-            alt={data.title || "About StandardGTM"}
-            className="w-48 h-48 rounded-full mx-auto mb-8 object-cover shadow-md"
-          />
+        {data.shortDescription && (
+            <p className="text-xl text-gray-600 mb-8 text-center">
+                {data.shortDescription}
+            </p>
         )}
         <div className="prose lg:prose-xl text-gray-800 leading-relaxed">
-          {/* For full MDX rendering, you'd use <MDXRemote source={content} /> */}
           <SimpleMarkdownRenderer content={content} />
+        </div>
+        <div className="mt-10 text-center">
+          <Button href="/contact" className="px-8 py-3 text-lg">
+            Schedule a Free Consultation
+          </Button>
         </div>
       </div>
     </div>
