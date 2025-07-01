@@ -1,12 +1,19 @@
 // app/labs/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { getLabBySlug, getAllLabSlugs } from '@/lib/content-parser';
-// REMOVE: import dynamic from 'next/dynamic'; // <--- Delete this line
+// REMOVE: import dynamic from 'next/dynamic'; // Ensure this line is still removed if you fixed it previously
 
 // Placeholder for a simple Markdown renderer
 const SimpleMarkdownRenderer = ({ content }: { content: string }) => {
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
+
+// Define the interface for the props this page component expects
+interface LabDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
 
 // Generates static params for SSG (pre-renders pages at build time)
 export async function generateStaticParams() {
@@ -14,11 +21,10 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+// Use the defined interface for the component's props
 export default async function LabDetailPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+}: LabDetailPageProps) { // <--- UPDATED THIS LINE
   const lab = await getLabBySlug(params.slug);
 
   if (!lab) {
@@ -27,17 +33,14 @@ export default async function LabDetailPage({
 
   const { frontmatter, content } = lab;
 
-  // You would conditionally render the specific interactive component based on the slug
-  // For now, it's a static placeholder.
   const InteractiveLabComponent = ({ slug }: { slug: string }) => {
     if (slug === 'linkedin-insights-analyzer') {
-      // return <LinkedInInsightsAnalyzer />; // Your actual interactive component
       return (
         <div className="bg-blue-50 p-8 rounded-lg border border-blue-200">
           <h3 className="text-2xl font-bold text-blue-800 mb-4">Interactive Demo Placeholder</h3>
           <p className="text-blue-700 mb-4">
-            This is where the live &quot;LinkedIn Insights Analyzer&quot; will go. {/* ESCAPED QUOTES */}
-            You&apos;ll build this interactive component in `components/labs/linkedin-insights-analyzer.tsx` (or similar) {/* ESCAPED APOSTROPHE */}
+            This is where the live &quot;LinkedIn Insights Analyzer&quot; will go.
+            You&apos;ll build this interactive component in `components/labs/linkedin-insights-analyzer.tsx` (or similar)
             and dynamically import it here.
           </p>
           <p className="text-blue-700">Currently displaying static content.</p>
@@ -51,7 +54,6 @@ export default async function LabDetailPage({
       </div>
     );
   };
-
 
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
@@ -85,7 +87,6 @@ export default async function LabDetailPage({
           <SimpleMarkdownRenderer content={content} />
         </div>
 
-        {/* The Live Interactive Lab Component */}
         <section className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
             The Live Lab: {frontmatter.title}

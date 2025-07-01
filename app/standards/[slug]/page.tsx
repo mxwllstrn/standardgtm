@@ -7,17 +7,23 @@ const SimpleMarkdownRenderer = ({ content }: { content: string }) => {
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
+// Define the interface for the props this page component expects
+interface StandardDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 // Generates static params for SSG (pre-renders pages at build time)
 export async function generateStaticParams() {
   const slugs = await getAllStandardSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
+// Use the defined interface for the component's props
 export default async function StandardDetailPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+}: StandardDetailPageProps) { // <--- UPDATED THIS LINE
   const standard = await getStandardBySlug(params.slug);
 
   if (!standard) {
@@ -57,7 +63,6 @@ export default async function StandardDetailPage({
           <SimpleMarkdownRenderer content={content} />
         </div>
 
-        {/* Placeholder for related Tactics/Solutions - you'll fetch these later */}
         <section className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Explore Related Solutions
@@ -66,7 +71,6 @@ export default async function StandardDetailPage({
             Dive into specific, actionable workflows that implement this standard.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* You'll replace this with dynamic content fetching from content/tactics */}
             <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Automated Prospect & Account Enrichment</h3>
                 <p className="text-gray-600 mb-3">Leverage Clay to automatically pull comprehensive prospect data directly into your CRM.</p>
