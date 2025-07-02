@@ -1,6 +1,3 @@
-import Link from "next/link"
-import { MessageCircle, User, X } from "lucide-react"
-
 interface TitlebarProps {
   pageSuper?: string,
   pageTitle?: string,
