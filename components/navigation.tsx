@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MessageCircle, User, X } from "lucide-react"
+import { MessageCircle, User, Linkedin } from "lucide-react"
 
 interface NavigationProps {
   currentPage?: string
@@ -10,7 +10,7 @@ export default function Navigation({ currentPage = "Standards" }: NavigationProp
     { name: "About", href: "/about" },
     { name: "Standards", href: "/standards" },
     { name: "Labs", href: "/labs" },
-    { name: "Support", href: "/support" },
+    { name: "Community", href: "/community" },
   ]
 
   return (
@@ -50,8 +50,8 @@ export default function Navigation({ currentPage = "Standards" }: NavigationProp
               <span className="sr-only">User profile</span>
             </button>
             <button className="p-2 text-neutral-400 hover:text-neutral-950 transition-colors">
-              <X className="h-5 w-5" />
-              <span className="sr-only">Close</span>
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">LinkedIn</span>
             </button>
           </div>
         </div>
