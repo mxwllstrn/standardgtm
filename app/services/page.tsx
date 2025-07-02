@@ -3,7 +3,6 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import matter from 'gray-matter';
-import { Button } from '@/components/ui/button'; // Assuming you created this
 
 // Placeholder for a simple Markdown renderer
 const SimpleMarkdownRenderer = ({ content }: { content: string }) => {
@@ -40,9 +39,7 @@ export default async function ServicesPage() {
           <SimpleMarkdownRenderer content={content} />
         </div>
         <div className="mt-10 text-center">
-          <Button href="/contact" className="px-8 py-3 text-lg">
-            Schedule a Free Consultation
-          </Button>
+
         </div>
       </div>
     </div>

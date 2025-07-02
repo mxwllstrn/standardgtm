@@ -1,8 +1,6 @@
 // app/contact/page.tsx
 // REMOVE: import Link from 'next/link'; // <--- Delete this line
 
-import { Button } from '@/components/ui/button'; // Assuming you created this
-
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16 text-center">
@@ -28,9 +26,6 @@ export default function ContactPage() {
               <label htmlFor="message" className="sr-only">Message</label>
               <textarea id="message" placeholder="Your Message" rows={5} className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 resize-y"></textarea>
             </div>
-            <Button type="submit" className="w-full">
-              Send Message
-            </Button>
           </form>
         </div>
 
