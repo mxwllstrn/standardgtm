@@ -15,7 +15,7 @@ export default function Navigation({ currentPage = "Standards" }: NavigationProp
 
   return (
     <nav className="w-full bg-white fixed">
-      <div className="mx-auto max-w-full px-4 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-full px-4 sm:px-5 lg:px-10">
         <div className="flex h-24 items-center justify-between">
           {/* Left Navigation */}
           <div className="flex items-center space-x-8">
