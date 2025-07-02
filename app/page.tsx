@@ -83,7 +83,7 @@ export default function CMSPage() {
 
       <main className="flex-1">
         <section className="w-full py-12 md:py-24">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="mx-auto max-w-6xl">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
                 GTM Tools & Resources

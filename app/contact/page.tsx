@@ -2,17 +2,17 @@ import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
 import Titlebar from "../../components/titlebar"
 
-export default function CommunityPage() {
+export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation currentPage="Community" />
+      <Navigation currentPage="Contact" />
       <Titlebar pageTitle="How can we help?" />
 
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-3xl">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Community</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Contact</h1>
               <div className="space-y-8">
                 <p className="text-lg text-gray-600">
                   Get help with Standard GTM and find answers to common questions.
