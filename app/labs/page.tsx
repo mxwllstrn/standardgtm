@@ -1,10 +1,12 @@
 import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
+import Titlebar from "../../components/titlebar"
 
 export default function LabsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation currentPage="Labs" />
+      <Titlebar pageTitle="Labs" />
 
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">

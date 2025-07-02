@@ -1,16 +1,17 @@
 import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
+import Titlebar from "../../components/titlebar"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation currentPage="About" />
+      <Titlebar pageTitle="Setting new standards for Sales, Marketing, and Ops Work" />
 
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 sm:px-5 lg:px-10">
             <div className="mx-auto max-w-3xl">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">About Standard GTM</h1>
               <div className="space-y-6 text-gray-600">
                 <p className="text-lg">
                   Standard GTM is a comprehensive platform designed to streamline and standardize go-to-market
