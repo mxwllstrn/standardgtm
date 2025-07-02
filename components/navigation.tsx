@@ -7,7 +7,6 @@ interface NavigationProps {
 
 export default function Navigation({ currentPage = "Standards" }: NavigationProps) {
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Standards", href: "/standards" },
     { name: "Labs", href: "/labs" },
@@ -24,7 +23,7 @@ export default function Navigation({ currentPage = "Standards" }: NavigationProp
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-gray-900 ${
+                className={`text-lg font-medium transition-colors hover:text-gray-900 ${
                   currentPage === item.name ? "text-gray-900" : "text-gray-500"
                 }`}
               >
@@ -35,7 +34,7 @@ export default function Navigation({ currentPage = "Standards" }: NavigationProp
 
           {/* Center Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <Link href="/" className="text-lg font-semibold text-gray-900">
+            <Link href="/" className="text-xl font-semibold text-gray-900">
               Standard GTM
             </Link>
           </div>
