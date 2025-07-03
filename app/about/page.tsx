@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <Navigation currentPage="About" />
       <Titlebar 
-        pageTitle="Setting new standards for GTM" 
+        pageTitle="Showcasing the standards of GTM" 
         pageDescription="Discover what Market, Sales, and Customer Service work should look like with defining new sense of normal." 
         />
 

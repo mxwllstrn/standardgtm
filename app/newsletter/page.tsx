@@ -6,7 +6,9 @@ export default function NewsletterPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation currentPage="Newsletter" />
-      <Titlebar pageTitle="Get Weekly Updates" pageDescription="Every Thursday, " />
+      <Titlebar 
+        pageTitle="The Standard Newsletter" 
+        pageDescription="Every Sunday, get an email that deep-dives into one new go-to-market Standard to consider." />
 
       <main className="flex-1">
       <section className="w-full">
@@ -14,7 +16,7 @@ export default function NewsletterPage() {
             <div className="mx-auto">
               <div className="grid grid-cols-1 gap-12 items-center">
                 <div className="flex justify-center lg:justify-end">
-                  <div className="w-full h-140 bg-blue-500 rounded-lg"></div>
+                  <div className="w-full h-140 bg-red-400 rounded-lg"></div>
                 </div>
               </div>
             </div>

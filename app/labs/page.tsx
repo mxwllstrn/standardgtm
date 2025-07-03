@@ -6,8 +6,10 @@ export default function LabsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation currentPage="Labs" />
-      <Titlebar pageTitle="Labs" />
-
+      <Titlebar 
+        pageTitle="Labs" 
+        pageDescription="We build products to showcase the magic of modern GTM solutions" 
+        />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
