@@ -1,7 +1,6 @@
 "use client"; // <--- This must be at the very top for client-side hooks
 
 import React, { useState } from 'react'; // Import React and useState
-import Link from 'next/link'; // Import Link for navigation or other links
 
 // Import your shared components
 import Navigation from "../../components/navigation";

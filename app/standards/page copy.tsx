@@ -2,8 +2,6 @@
 import { useState } from "react"
 import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
-import Titlebar from "../../components/titlebar"
-import { Zap, BarChart3, Cog, TrendingUp, Eye, Map } from "lucide-react"
 
 interface CMSItem {
   id: string
@@ -12,7 +10,6 @@ interface CMSItem {
   category: string
   buttonText: string
   bgColor: string
-  icon: any
   color: string
   featured?: boolean
 }
@@ -26,7 +23,6 @@ const cmsItems: CMSItem[] = [
     category: "Marketing",
     buttonText: "Start Research",
     bgColor: "bg-pink-300",
-    icon: BarChart3,
     color: "text-pink-600",
   },
   {
@@ -37,7 +33,6 @@ const cmsItems: CMSItem[] = [
     category: "RevOps",
     buttonText: "Build Strategy",
     bgColor: "bg-blue-400",
-    icon: Zap,
     color: "text-neutral-800",
     featured: true,
   },
@@ -49,7 +44,6 @@ const cmsItems: CMSItem[] = [
     category: "Product Analytics",
     buttonText: "Automate Launch",
     bgColor: "bg-orange-400",
-    icon: Cog,
     color: "text-orange-600",
   },
   {
@@ -60,7 +54,6 @@ const cmsItems: CMSItem[] = [
     category: "Product Analytics",
     buttonText: "View Analytics",
     bgColor: "bg-lime-800",
-    icon: TrendingUp,
     color: "text-lime-800",
   },
   {
@@ -71,7 +64,6 @@ const cmsItems: CMSItem[] = [
     category: "Marketing",
     buttonText: "Monitor Competitors",
     bgColor: "bg-purple-800",
-    icon: Eye,
     color: "text-purple-600",
   },
   {
@@ -82,7 +74,6 @@ const cmsItems: CMSItem[] = [
     category: "Product Analytics",
     buttonText: "Map Journey",
     bgColor: "bg-teal-300",
-    icon: Zap,
     color: "text-teal-600",
   },
 ]
@@ -159,9 +150,7 @@ export default function StandardsPage() {
               {featuredItem && activeFilter === "All" && (
                 <div className="bg-neutral-100 border border-2 border-neutral-200 rounded-sm p-8 mb-12 p-24 border-b border-gray-300">
                   <div className="flex flex-col items-center gap-8">
-                    <div className="flex-shrink-0">
-                      <featuredItem.icon className={`h-16 w-16 ${featuredItem.color}`} />
-                    </div>
+
                     <div className="flex-1 text-left">
                       <h2 className="text-3xl font-normal text-gray-900 mb-4">{featuredItem.title}</h2>
                       <p className="text-lg text-gray-700 mb-6">{featuredItem.description}</p>

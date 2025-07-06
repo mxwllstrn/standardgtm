@@ -1,6 +1,5 @@
 import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
-import Titlebar from "../../components/titlebar"
 
 export default function AboutPage() {
   return (

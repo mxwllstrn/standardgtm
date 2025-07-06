@@ -9,7 +9,7 @@ export interface FloatingInputProps extends React.InputHTMLAttributes<HTMLInputE
 }
 
 const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
-  ({ className, type, label, placeholder, focusRingColorClass, ...props }, ref) => { // Include new prop in destructuring
+  ({ className, type, label, focusRingColorClass, ...props }, ref) => { // Include new prop in destructuring
     const [isFocused, setIsFocused] = React.useState(false);
     const hasValue = !!props.value || !!props.defaultValue;
 

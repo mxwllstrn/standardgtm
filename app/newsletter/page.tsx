@@ -79,12 +79,10 @@ const newsletterArticles: NewsletterArticle[] = [
   },
 ]
 
-const categories = ["All", "Strategy", "Sales", "Marketing", "Pricing", "Mistakes"]
-
 export default function NewsletterPage() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState("") // To display success/error message to user
-  const [activeFilter, setActiveFilter] = useState("All")
+  const [activeFilter] = useState("All")
 
   // Filter articles based on active filter
   const filteredArticles =
@@ -184,7 +182,7 @@ export default function NewsletterPage() {
 
                 {/* Articles List */}
                 <div className="space-y-4">
-                  {filteredArticles.map((article, index) => (
+                  {filteredArticles.map((article) => (
                     <div
                       key={article.id}
                       className="py-4 transition-colors cursor-pointer border-b border-white/30 mb-0"
