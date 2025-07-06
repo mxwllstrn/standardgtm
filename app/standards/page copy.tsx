@@ -116,9 +116,13 @@ export default function StandardsPage() {
       <Navigation currentPage="Standards" />
       <section className="w-full pt-12 md:pt-20 lg:pt-20 px-4 sm:px-5 lg:px-10">
         <div className="rounded-xs">
-          <div className="ml-0 mr-auto max-w-3xl pt-12 text-let">
+          <div className="mx-auto max-w-3xl pt-12 text-center">
             <br />
-            <h1 className="text-3xl tracking-tight sm:text-4xl/12 md:text-[2.5rem]/12 text-neutral-950">Explore the standards that set apart the strongest GTM teams</h1>
+            <h1 className="text-3xl tracking-tight sm:text-4xl/12 md:text-[2.5rem]/12 text-neutral-950">
+            We showcase
+            <span className="font-medium underline decoration-wavy decoration-teal-700"> magical solutions</span>
+            <span className="inline-block h-12 w-20 bg-teal-900 rounded-md -mb-3 mx-1.5"></span>
+            that set new standards for top GTM teams</h1>
             <br />
             <br />
           </div>

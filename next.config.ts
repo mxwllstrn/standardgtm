@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/about',               // When someone visits the root URL
+        destination: '/', // <--- NOW REDIRECTS TO /standards
+        permanent: false,          // false for temporary redirect (302 status code)
+      },
+    ];
+  },
 };
-
-export default nextConfig;
+module.exports = nextConfig;

@@ -12,7 +12,7 @@ export default function Navigation({ currentPage = "" }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItemsLeft = [
-    { name: "About", href: "/about" },
+    { name: "About", href: "/" },
     { name: "Standards", href: "/standards" },
     { name: "Resources", href: "/resources" },
     { name: "Labs", href: "/labs" },
@@ -51,7 +51,7 @@ export default function Navigation({ currentPage = "" }: NavigationProps) {
           <div className="hidden lg:flex items-center space-x-1">
             <Link
               href="/newsletter"
-              className={`text-md font-medium transition-colors text-neutral-800 px-2 h-[32px] rounded-sm items-center flex hover:bg-neutral-200 ${
+              className={`cursor-pointer text-md font-medium transition-colors text-neutral-800 px-2 h-[32px] rounded-sm items-center flex hover:bg-neutral-200 ${
                   currentPage == "Newsletter" ? "bg-neutral-200" : " bg-neutral-100"
                 }`}
               >
@@ -59,7 +59,7 @@ export default function Navigation({ currentPage = "" }: NavigationProps) {
             </Link>
             <Link
               href="/agency"
-              className={`text-md font-medium transition-colors text-neutral-800 px-2 h-[32px] rounded-sm items-center flex hover:bg-neutral-200 ${
+              className={`cursor-pointer text-md font-medium transition-colors text-neutral-800 px-2 h-[32px] rounded-sm items-center flex hover:bg-neutral-200 ${
                   currentPage == "Agency" ? "bg-neutral-200" : " bg-neutral-100"
                 }`}
               >
@@ -67,7 +67,7 @@ export default function Navigation({ currentPage = "" }: NavigationProps) {
             </Link>
             <Link
               href="/contact"
-              className={`text-md/2 bg-neutral-100 text-neutral-950 rounded-sm h-[32px] w-[32px] flex items-center text-center hover:bg-neutral-200 ${
+              className={`cursor-pointer text-md/2 bg-neutral-100 text-neutral-950 rounded-sm h-[32px] w-[32px] flex items-center text-center hover:bg-neutral-200 ${
                 currentPage == "Contact" ? "bg-neutral-200" : " bg-neutral-100"
               }`}
             >

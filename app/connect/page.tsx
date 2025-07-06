@@ -8,9 +8,11 @@ import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Titlebar from "../../components/titlebar";
 import { FloatingInput } from '@/components/ui/floating-input'; // <--- IMPORT FLOATING INPUT
+import { FloatingTextarea } from '@/components/ui/floating-textarea'; // <--- IMPORT FLOATING INPUT
 
-export default function AgencyPage() {
+export default function ConnectPage() {
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [status, setStatus] = useState(''); // To display success/error message to user
 
   // Handle form submission
@@ -19,12 +21,12 @@ export default function AgencyPage() {
     setStatus('Sending...'); // Give user feedback
 
     try {
-      const response = await fetch('/api/agency', { // Send POST request to your API route
+      const response = await fetch('/api/connect', { // Send POST request to your API route
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }), // Send only email for agency
+        body: JSON.stringify({ email }), // Send only email for connect
       });
 
       const data = await response.json();
@@ -36,16 +38,16 @@ export default function AgencyPage() {
         setStatus(`Failed to subscribe: ${data.message || 'Unknown error'}`);
       }
     } catch (error) {
-      console.error('Error submitting agency signup:', error);
+      console.error('Error submitting connect signup:', error);
       setStatus('Failed to subscribe. Please check your connection.');
     }
   };
 
   return (
     <div className="min-h-screen bg-white text-neutral-950 flex flex-col">
-      <Navigation currentPage="Agency" />
+      <Navigation currentPage="Connect" />
       <Titlebar 
-        pageTitle="Agency" 
+        pageTitle="Connect" 
         pageDescription="We work with clients – half education, half hands-on development."
       />
 
@@ -61,14 +63,23 @@ export default function AgencyPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   // This is the line to pass the red focus outline color
-                  focusRingColorClass="focus:ring-rose-800 focus:border-rose-800" // <--- THIS LINE
+                  focusRingColorClass="focus:ring-slate-800 focus:border-slate-800" // <--- THIS LINE
                   // The className below ensures proper appearance on red background (from previous version)
                 />
+                <FloatingTextarea
+                          id="message"
+                          label="Message" // Label for the textarea
+                          rows={5}
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          required
+                          placeholder="" // Placeholder for textarea
+                        />
                 </div>
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-rose-800 text-white text-base/8 font-semibold px-6 py-2 h-12 rounded-xs shadow-md hover:bg-rose-900 cursor-pointer transition-colors duration-200 whitespace-nowrap"
+                  className="bg-slate-800 text-white font-semibold px-6 py-2 h-12 rounded-xs shadow-md hover:bg-slate-900 cursor-pointer transition-colors duration-200 whitespace-nowrap"
                   disabled={status === 'Sending...'}
                 >
                   {status === 'Sending...' ? 'Subscribing...' : 'Get Started'}
@@ -88,7 +99,7 @@ export default function AgencyPage() {
               <div className="mx-auto">
                 <div className="grid grid-cols-1 gap-12 items-center">
                   <div className="flex justify-center lg:justify-end">
-                    <div className="w-full h-140 bg-rose-800 rounded-lg"></div>
+                    <div className="w-full h-140 bg-slate-800 rounded-lg"></div>
                   </div>
                 </div>
               </div>
