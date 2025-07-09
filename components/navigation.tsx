@@ -19,6 +19,8 @@ export default function Navigation({ currentPage = "" }: NavigationProps) {
           </div>
           </div>
           </div>
+          <div className="hidden">{currentPage}</div>
+          
     </nav>
   )
 }
