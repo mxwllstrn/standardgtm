@@ -104,19 +104,105 @@ export default function StandardsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation currentPage="Standards" />
-      <section className="w-full pt-12 md:pt-20 lg:pt-20 px-4 sm:px-5 lg:px-10">
-        <div className="rounded-xs">
-          <div className="ml-0 mr-auto max-w-3xl pt-12 text-let">
-            <br />
-            <h1 className="text-3xl tracking-tight sm:text-4xl/12 md:text-[2.5rem]/12 text-neutral-950">Explore the standards that set apart the strongest GTM teams</h1>
-            <br />
-            <br />
+
+    <Navigation currentPage="Home" />
+
+<main className="px-[20px] -mt-20">
+
+<section className="relative bg-gradient-to-br from-teal-950 via-teal-850 to-teal-900 text-white overflow-hidden py-10">
+  {/* Abstract geometric background elements */}
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute top-20 right-20 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-20 left-20 w-80 h-80 bg-teal-400 rounded-full blur-3xl"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-teal-200 rounded-full blur-2xl"></div>
+  </div>
+
+  <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+    <div className="max-w-4xl mx-auto text-center">
+
+
+
+    <h1 className="text-5xl md:text-6xl lg:text-7xl/18 font-bold leading-tight mb-8 font-luxury">
+      Standards
+      </h1>
+    <div className="mx-auto max-w-8xl px-4 sm:px-5 lg:px-10">
+      <div className="" id="cms-section">
+        <div className="bg-neutral-100 border border-2 border-neutral-200 rounded-sm p-8 mb-12 p-24 border-b border-gray-300">
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex-1 text-left">
+              <h2 className="text-3xl font-normal text-gray-900 mb-4">My Title</h2>
+              <p className="text-lg text-gray-700 mb-6">Description here</p>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-sm text-lg font-medium hover:bg-blue-700 transition-colors">
+              Text me, bro!
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <main className="flex-1">
+
+      <p className="text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed text-center mx-auto">
+            We are a team of automation experts, data scientists, and educators that help build
+            inbound, outbound, and RevOps systems that scale.
+          </p>
+    </div>
+
+  </div>
+
+          <div className="mx-auto max-w-5xl px-4 sm:px-5 lg:px-10">
+            <div className="" id="cms-section">
+              {/* Featured Item - Only show when filter is "All" */}
+              {featuredItem && activeFilter === "All" && (
+                <div className="bg-neutral-100 border border-2 border-neutral-200 rounded-sm p-8 mb-12 p-24 border-b border-gray-300">
+                  <div className="flex flex-col items-center gap-8">
+                    <div className="flex-1 text-left">
+                      <h2 className="text-3xl font-normal text-gray-900 mb-4">{featuredItem.title}</h2>
+                      <p className="text-lg text-gray-700 mb-6">{featuredItem.description}</p>
+                      <button className="bg-blue-600 text-white px-8 py-3 rounded-sm text-lg font-medium hover:bg-blue-700 transition-colors">
+                        {featuredItem.buttonText}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+
+              <div className="space-y-12 ">
+                {Object.entries(itemsByCategory).map(([category, items]) => (
+                  <div className="bg-neutral-100 border border-2 border-neutral-200 rounded-sm p-8" key={category}>
+                    {/* Category Header */}
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-gray-900 pb-2 border-b-4 border-yellow-400 inline-block">
+                        {category}
+                      </h3>
+                    </div>
+
+                    {/* Items List */}
+                    <div className="space-y-6 ">
+                      {items.map((item, index) => (
+                        <div key={item.id}>
+                          <h4 className="text-xl font-medium text-gray-900 hover:text-gray-700 cursor-pointer transition-colors">
+                            {item.title}
+                          </h4>
+                          {index < items.length - 1 && <div className="mt-6 border-b border-gray-200"></div>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Empty State */}
+              {Object.keys(itemsByCategory).length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500">No items found for the selected category.</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+</section>
         {/* Filter Buttons */}
         <section className="w-full">
           <div className="mx-auto max-w-full px-4 sm:px-5 lg:px-10">
