@@ -22,7 +22,7 @@ export default function Page() {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl lg:text-8xl/24 font-bold leading-tight mb-8 font-luxury">
-              What's your next GTM play?
+              What&#39;s your next GTM play?
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed">
               We are a team of automation experts, data scientists, and educators that help build
@@ -47,19 +47,19 @@ export default function Page() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-center text-4xl md:text-4xl text-gray-900 mb-8 leading-tight max-w-3xl mx-auto">
-              We believe that magical GTM solutions are not only useful – they're standard.
+              We believe that magical GTM solutions are not only useful – they&#39;re standard.
             </h2>
             <p className="text-left text-lg md:text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
               As AI and other emerging tech continues to disrupt—attracting capital and creating value pools like never
               before—some large corporates are being left behind. Many are trying to answer the demand for innovative
-              solutions. But these ventures rarely move the needle. That's where the breadth, scale, and deep experience
+              solutions. But these ventures rarely move the needle. That&#39;s where the breadth, scale, and deep experience
               of McKinsey Business Building come into play to help businesses accelerate their growth ambitions.
             </p>
             <Link
               href="/contact"
               className="inline-block bg-teal-800 text-white px-8 py-4 text-lg font-semibold rounded-xs hover:bg-teal-700 transition-colors"
             >
-              Let's build something
+              Let&#39;s build something
             </Link>
           </div>
         </div>
@@ -74,14 +74,14 @@ export default function Page() {
             <p className="text-left text-lg md:text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
               As AI and other emerging tech continues to disrupt—attracting capital and creating value pools like never
               before—some large corporates are being left behind. Many are trying to answer the demand for innovative
-              solutions. But these ventures rarely move the needle. That's where the breadth, scale, and deep experience
+              solutions. But these ventures rarely move the needle. That&#39;s where the breadth, scale, and deep experience
               of McKinsey Business Building come into play to help businesses accelerate their growth ambitions.
             </p>
             <Link
               href="/contact"
               className="inline-block bg-teal-800 text-white px-8 py-4 text-lg font-semibold rounded-xs hover:bg-teal-700 transition-colors"
             >
-              Let's build something
+              Let&#39;s build something
             </Link>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Page() {
           <p className="text-left text-lg md:text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl ml-0 mr-auto">
               As AI and other emerging tech continues to disrupt—attracting capital and creating value pools like never
               before—some large corporates are being left behind. Many are trying to answer the demand for innovative
-              solutions. But these ventures rarely move the needle. That's where the breadth, scale, and deep experience
+              solutions. But these ventures rarely move the needle. That&#39;s where the breadth, scale, and deep experience
               of McKinsey Business Building come into play to help businesses accelerate their growth ambitions.
             </p>
         </div>
