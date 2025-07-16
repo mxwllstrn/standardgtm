@@ -1,7 +1,6 @@
 import Navigation from "../../components/navigation"
 import Footer from "../../components/footer"
 import Titlebar from "../../components/titlebar"
-import { ArrowDown } from "lucide-react"
 
 export default function LabsPage() {
   return (
